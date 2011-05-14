@@ -1,6 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git' # Devise must be required before RailsAdmin
+gem "oa-oauth", :require => "omniauth/oauth"
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
