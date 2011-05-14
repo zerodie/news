@@ -5,6 +5,8 @@
 		<td>Url</td>
 		<td>content</td>
 		<td></td>
+		<td></td>
+		<td></td>
 	</tr>
 <% @messages.each do |message| %>
   <tr>
@@ -12,6 +14,8 @@
     <td><a href="<%= message.url %>"><%= message.url %></a></td>
 	  <td><%= message.content %></td>
     <td><%= link_to 'Show', message %></td>
+		<td><%= link_to 'Edit', edit_message_path(message) %></td>
+		<td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

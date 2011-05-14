@@ -1,8 +1,9 @@
 News::Application.routes.draw do
   
   resources :messages
-  resources :users, :only => [:index, :show] do
-    resources :messages, :only => [:index]
+  
+  resources :users do
+    resources :messages
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
