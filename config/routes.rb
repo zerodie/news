@@ -1,9 +1,15 @@
 News::Application.routes.draw do
-  #devise_for :users
+  
+  resources :messages
+  resources :users, :only => [:index, :show] do
+    resources :messages, :only => [:index]
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
     get 'sign_in', :to => 'sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'sessions#destroy', :as => :destroy_user_session
   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,17 @@
+
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Url</td>
+		<td>content</td>
+		<td></td>
+	</tr>
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= message.title %></td>
+    <td><a href="<%= message.url %>"><%= message.url %></a></td>
+	  <td><%= message.content %></td>
+    <td><%= link_to 'Show', message %></td>
+  </tr>
+<% end %>
+</table>
