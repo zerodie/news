@@ -6,7 +6,7 @@ News::Application.routes.draw do
     resources :messages
   end
 
-  devise_for :users, :path => 'accounts', :controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
     get 'sign_in', :to => 'sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'sessions#destroy', :as => :destroy_user_session
   end
