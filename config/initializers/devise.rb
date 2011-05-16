@@ -1,7 +1,8 @@
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
-  config.omniauth :facebook, "192496594129317", "8a17b392186b68b7d1fefcb2c9f878e2"
+  config.omniauth :facebook, "192496594129317", "8a17b392186b68b7d1fefcb2c9f878e2",
+        {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
