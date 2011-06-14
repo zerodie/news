@@ -27,10 +27,14 @@ class MessagesController < ApplicationController
   
   #GET /messages/new
   def new
+    
+  
     unless user_signed_in?
       redirect_to new_user_session_path
     else
       @message = Message.new
+      @message.title = params[:t]
+  	  @message.url = params[:u]
     end
   end
   
