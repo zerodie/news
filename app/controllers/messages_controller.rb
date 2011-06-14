@@ -35,6 +35,7 @@ class MessagesController < ApplicationController
       @message = Message.new
       @message.title = params[:t]
   	  @message.url = params[:u]
+	  @message.content = params[:s]
     end
   end
   

@@ -1,7 +1,8 @@
-<a href="javascript:window.location=%22http://localhost:3000/messages/new?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title)">bookmarklet</a>
+<a href="javascript:window.location=%22http://localhost:3000/messages/new?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title)+%22&s=%22+encodeURIComponent((window.getSelection?window.getSelection():(document.getSelection)?document.getSelection():(document.selection?document.selection.createRange().text:0)))">bookmarklet</a>
 
 <h1>New Message</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', messages_path %>
+
