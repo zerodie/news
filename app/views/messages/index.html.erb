@@ -1,12 +1,5 @@
 <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <table>
-	<tr>
-		<td></td>
-		<td>Title</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
 <% @messages.each do |message| %>
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
   <tr>
@@ -24,3 +17,5 @@
   </tr>
 <% end %>
 </table>
+<br />
+<%= link_to 'add news', new_message_path %>
