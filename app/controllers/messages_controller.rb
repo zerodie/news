@@ -63,7 +63,7 @@ class MessagesController < ApplicationController
     if message.user == current_user
       @message = message
     else
-      flash[:notice] = "Must be same user."
+      flash[:notice] = "Must be the same user."
       redirect_to message
     end
   end
@@ -85,8 +85,13 @@ class MessagesController < ApplicationController
   #DELETE /messages/1
   #DELETE /messages/1.xml
   def destroy
-    @message = Message.find(params[:id])
-    @message.destroy
+    message = Message.find(params[:id])
+    if message.user == current_user
+      message.destroy
+    else
+      flash[:notice] = "Must be the same user."
+      redirect_to message
+    end
     respond_to do |format|
       format.html { redirect_to(messages_url) }
       format.xml  { head :ok }
