@@ -16,8 +16,9 @@
   <%= @message.content %>
 </p>
 
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
+<% if @message.user == current_user %>
+	<%= link_to 'Edit', edit_message_path(@message) %> |
+<% end %>
 <%= link_to 'Back', messages_path %>
 
 <% tmp = "http://twhackernews.heroku.com/messages/" + @message.id.to_s %>
