@@ -16,9 +16,11 @@
     <td><%= message.title %></td>
     <td><a href="<%= message.url %>"><%= message.url %></a></td>
 	  <td><%= message.content %></td>
-    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Discuss', message %></td>
+<% if message.user == current_user %>
 		<td><%= link_to 'Edit', edit_message_path(message) %></td>
 		<td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
   </tr>
 <% end %>
 </table>
