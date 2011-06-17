@@ -14,14 +14,15 @@
 
 </head>
 <body>
-  <header>
-    <%= image_tag("TWHN.png", :alt => "TWHN") %>
-    <div id="fb-root"></div><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="http://twhackernews.heroku.com/" send="false" layout="button_count" width="450" show_faces="false" font=""></fb:like>
-    
-  </header>
+  <div class="container">
+    <header>
+      <%= image_tag("TWHN.png", :alt => "TWHN") %>
+      <div id="fb-root"></div><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="http://twhackernews.heroku.com/" send="false" layout="button_count" width="450" show_faces="false" font=""></fb:like>
+    </header>
   
-  <section>
-    <%= yield %>
-  </section>
+    <section>
+      <%= yield %>
+    </section>
+  </div>
 </body>
 </html>
