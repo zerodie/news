@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>News</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-  
-  <meta property="og:title" content="TWHN" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content=<%= url %> />
-  <meta property="og:site_name" content="TW Hacker News" />
-  <meta property="fb:admins" content="100000068191335" />
-  <meta property="fb:admins" content="100000068191335"/>
-
-  
-</head>
-<body>
-<%= url %>
-
 <h1>Editing message</h1>
 
 <%= render 'form' %>
@@ -25,6 +5,4 @@
 <%= link_to 'Show', @message %> |
 <%= link_to 'Back', messages_path %>
 
-</body>
-</html>
 
