@@ -3,7 +3,7 @@
 <% @messages.each do |message| %>
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
   <tr>
-		<td><fb:like href="<%= tmp %>" layout="button_count" show_faces="false" width="100" font=""></fb:like></td>
+		<td><fb:like href="<%= tmp %>" layout="standard" show_faces="false" width="450" font=""></fb:like></td>
 		<% if message.url != "" %>
 		    <td><a href="<%= message.url %>"><%= message.title %></a></td>
 		<% else %>
