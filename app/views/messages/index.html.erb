@@ -9,6 +9,7 @@
 		<% else %>
 			  <td><%= link_to message.title, message %></td>
 		<% end %>
+		<td><%= message.get_like_count(message.id) %></td>
     <td><%= link_to 'Discuss', message %></td>
 <% if message.user == current_user %>
 		<td><%= link_to 'Edit', edit_message_path(message) %></td>
