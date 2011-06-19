@@ -24,7 +24,7 @@ section {
 }
 
 section h1 {
-  font-size: 200%;
+  font-size: 150%;
 }
 
 footer {
@@ -42,9 +42,10 @@ footer nav {
 /* Table */
 table { 
   border: 0;
+  border-collpase: collpase; 
 }  
 td { 
-  border-bottom:1 solid #000000;
+  border-bottom: 1px solid #000;
 }
 
 /* Links */
