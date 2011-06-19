@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  #include ApplicationHelper
+  include ApplicationHelper
   #GET /messages
   def index
     if params[:user_id]
