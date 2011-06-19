@@ -99,15 +99,16 @@ class MessagesController < ApplicationController
   end
   
   #Get Message ID
-    def getMessageID
-      #puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
-    	if params[:message_id] =~ /\/([\d].*)/ 
-    	  mid = $1
-    	  tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
-        msg.like_count = msg.likeCountURL(tmp)
-        msg.save
-    	else 
-    	  puts "nomatch"
-    	end 
-    end
+  def getMessageID
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
+  	if params[:message_id] =~ /\/([\d].*)/ 
+  	  mid = $1
+  	  tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
+      msg.like_count = msg.likeCountURL(tmp)
+      msg.save
+      puts msg.like_count
+  	else 
+  	  puts "no match"
+  	end 
+  end
 end
