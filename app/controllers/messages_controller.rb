@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
       msg.like_count = msg.likeCountURL(tmp)
       msg.save
     end
-    @messages = Message.all( :order => 'id DESC' )
+    @messages = Message.all( :order => 'like_count DESC' )
     
     respond_to do |format|
       format.html # index.html.erb
