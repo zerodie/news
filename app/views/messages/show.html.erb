@@ -23,7 +23,7 @@
 <% tmp = "http://twhackernews.heroku.com/messages/" + @message.id.to_s %>
 
 <p>
-  <fb:like href="<%= tmp %>" layout="standard" show_faces="false" width="450" font=""></fb:like>
+  <script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="<%= tmp %>" layout="standard" show_faces="false" width="450" font=""></fb:like>
 </p>
 <p>
   <div id="fb-root"></div><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:comments href="<%= tmp %>" num_posts="10" width="450"></fb:comments>
