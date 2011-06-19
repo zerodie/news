@@ -1,9 +1,15 @@
-<%= link_to 'add news', new_message_path %>
+<table>
+  <tr>
+    <td><%= link_to 'add news', new_message_path %></td>
+  </tr>
+</table>
+
 <script type="text/javascript">
 FB.Event.subscribe('edge.create', function (response) {
         alert("comment added");
 });
 </script>
+
 <table>
 <% @messages.each do |message| %>
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>

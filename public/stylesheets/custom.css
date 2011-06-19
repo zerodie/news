@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #FFF;
+  background: #E3E3E3;
 }
 
 header {
@@ -14,13 +14,15 @@ header {
 
 header img {
   padding-top: 5px;
-  padding-bottom: 2px;
+  background: #E3E3E3;
+  padding-bottom: 8px;
   background: #FFF;
 }
 
 section {
   font-size: 100%;
-  padding: 20px;
+  padding: 10px;
+  background: #FFF;
 }
 
 section h1 {
@@ -44,7 +46,7 @@ table {
   border: 0;
 }  
 td { 
-  height: 8px;
+  height: 10px;
 }
 
 /* Links */
