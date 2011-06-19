@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
-  include ApplicationHelper
+  include MessagesHelper
   #GET /messages
   def index
-    #@messages = Message.all(:order => 'like_count DESC')
-    @messages = Message.all
+    @messages = Message.all(:order => 'like_count DESC')
+    #@messages = Message.all.sort! { |m| m.like_count }
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages } 
