@@ -14,13 +14,14 @@ header {
 
 header img {
   padding-top: 5px;
-  padding-bottom: 2px;
+  background: #E3E3E3;
+  padding-bottom: 8px;
   background: #FFF;
 }
 
 section {
   font-size: 100%;
-  padding: 20px;
+  padding: 10px;
   background: #FFF;
 }
 
