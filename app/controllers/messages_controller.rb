@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])
-      @messages = @user.messages
+      messages = @user.messages
+      @messages = message
     else
       @messages = Message.all
     end
@@ -27,15 +28,14 @@ class MessagesController < ApplicationController
   
   #GET /messages/new
   def new
-    
-  
+
     unless user_signed_in?
       redirect_to new_user_session_path
     else
       @message = Message.new
       @message.title = params[:t]
   	  @message.url = params[:u]
-	  @message.content = params[:s]
+	    @message.content = params[:s]
     end
   end
   
