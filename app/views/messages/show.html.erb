@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
   <%= @message.title %>
 </p>
 
 <p>
-  <b>Url:</b>
   <a href="<%= @message.url %>"><%= @message.url %></a>
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @message.content %>
+  <% if @message.content != nil %>
+    <b>Content:</b>
+    <%= @message.content %>
+  <% end %>
 </p>
 
+<br />
 <% if @message.user == current_user %>
 	<%= link_to 'Edit', edit_message_path(@message) %> |
 <% end %>
 <%= link_to 'Back', messages_path %>
+<br />
 
 <% tmp = "http://twhackernews.heroku.com/messages/" + @message.id.to_s %>
 
