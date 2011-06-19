@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
   <a href="<%= @message.url %>"><%= @message.title %></a>
 </p>
 
@@ -15,6 +14,8 @@
 <% if @message.user == current_user %>
 	<%= link_to 'Edit', edit_message_path(@message) %> |
 <% end %>
+
+<br />
 
 <% tmp = "http://twhackernews.heroku.com/messages/" + @message.id.to_s %>
 
