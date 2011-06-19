@@ -2,13 +2,13 @@ class MessagesController < ApplicationController
   include MessagesHelper
   #GET /messages
   def index
-    #@messages = Message.all
-    #@messages.each do |msg|
-    #  tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
-    #  msg.count = likeCountURL(tmp)
-    #  msg.save
-    #end
-    @messages = Message.all(:order => 'id DESC')
+    @messages = Message.all
+    @messages.each do |msg|
+      tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
+      msg.count = msg.likeCountURL(tmp)
+      msg.save
+    end
+    @messages = Message.all(:order => 'like_count DESC')
     
     respond_to do |format|
       format.html # index.html.erb
