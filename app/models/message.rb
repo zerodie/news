@@ -4,6 +4,6 @@ class Message < ActiveRecord::Base
   validates_presence_of :content, :unless => has_url?
   
   def has_url?
-    url
+    self.url
   end
 end
