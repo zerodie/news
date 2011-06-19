@@ -1,6 +1,6 @@
 class AddLikecountToMessages < ActiveRecord::Migration
   def self.up
-    add_column :messages, :like_count, :integer
+    add_column :messages, :like_count, :integer, :default => 0
   end
 
   def self.down

@@ -5,26 +5,26 @@
 }
 
 body {
-  background: #FFF;
+  background: #E3E3E3;
 }
 
 header {
+  padding-top: 5px;
   padding-top: 10px;
+  padding-bottom: 8px;
 }
 
 header img {
-  padding-top: 5px;
-  padding-bottom: 2px;
-  background: #FFF;
+  background: #E3E3E3;
 }
 
 section {
-  font-size: 100%;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
+  background: #FFF;
 }
 
 section h1 {
-  font-size: 200%;
+  font-size: 150%;
 }
 
 footer {
@@ -44,7 +44,7 @@ table {
   border: 0;
 }  
 td { 
-  border-bottom:1 solid #000000;
+  
 }
 
 /* Links */
@@ -70,7 +70,6 @@ nav {
 }
 
 nav {
-  background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
 }
