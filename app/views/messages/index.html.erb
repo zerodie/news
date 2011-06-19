@@ -1,4 +1,9 @@
 <%= link_to 'add news', new_message_path %>
+<script type="text/javascript">
+FB.Event.subscribe('edge.create', function (response) {
+        alert("comment added");
+});
+</script>
 <table>
 <% @messages.each do |message| %>
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
@@ -10,7 +15,6 @@
 		<% else %>
 			<td width=60%><%= link_to message.title, message %></td>
 		<% end %>
-		
     <td><%= link_to 'Discuss', message %></td>
   <% if message.user == current_user %>
 		<td><%= link_to 'Edit', edit_message_path(message) %></td>
@@ -20,8 +24,5 @@
   </tr>
 <% end %>
 </table>
-
-
-
 
 
