@@ -7,7 +7,7 @@
 		<% if message.url != "" %>
 		    <td width=60%><a href="<%= message.url %>"><%= message.title %></a></td>
 		<% else %>
-			  <td><%= link_to message.title, message %></td>
+			<td width=60%><%= link_to message.title, message %></td>
 		<% end %>
 		
     <td><%= link_to 'Discuss', message %></td>
