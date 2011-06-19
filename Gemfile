@@ -15,6 +15,7 @@ gem 'rails', '3.0.7'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git' # Devise must be required before RailsAdmin
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'json_pure', '1.4.6', :require => 'json'
+gem 'rake', '~> 0.9.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,7 +40,7 @@ gem 'sqlite3'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
+# and tasks are available in development mode:
 # group :development, :test do
 #   gem 'webrat'
 # end
