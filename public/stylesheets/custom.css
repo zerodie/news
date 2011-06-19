@@ -44,7 +44,7 @@ table {
   border: 0;
 }  
 td { 
-  border: 0;
+  border-bottom:1 solid #000000;
 }
 
 /* Links */
