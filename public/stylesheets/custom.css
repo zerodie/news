@@ -9,14 +9,13 @@ body {
 }
 
 header {
+  padding-top: 5px;
   padding-top: 10px;
+  padding-bottom: 8px;
 }
 
 header img {
-  padding-top: 5px;
   background: #E3E3E3;
-  padding-bottom: 8px;
-  background: #FFF;
 }
 
 section {
@@ -46,7 +45,7 @@ table {
   border: 0;
 }  
 td { 
-  height: 10px;
+  
 }
 
 /* Links */
@@ -72,7 +71,6 @@ nav {
 }
 
 nav {
-  background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
 }
