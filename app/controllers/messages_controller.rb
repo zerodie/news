@@ -97,4 +97,14 @@ class MessagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  #Get Message ID
+    def getMessageID
+      puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
+    	if params[:message_id] =~ /\/([\d].*)/ 
+    	  puts $1
+    	else 
+    	  puts "nomatch"
+    	end 
+    end
 end

@@ -10,5 +10,4 @@ class Message < ActiveRecord::Base
       true
     end
   end
-  
 end
