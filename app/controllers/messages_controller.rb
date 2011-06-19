@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @messages.each do |msg|
       tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
       msg.count = likeCountURL(tmp)
+      msg.save
     end
     @messages = Message.all(:order => 'like_count DESC')
     #@messages = Message.all.sort! { |m| m.like_count }
