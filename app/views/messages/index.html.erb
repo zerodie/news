@@ -3,6 +3,7 @@
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
   <tr>
 		<td><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="<%= tmp %>" layout="button_count" show_faces="false" width="85" font=""></fb:like></td>
+		<td><%= likeCountURL(tmp) %><td/>
 		<% if message.url != "" %>
 		    <td width=60%><a href="<%= message.url %>"><%= message.title %></a></td>
 		<% else %>

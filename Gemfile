@@ -14,7 +14,7 @@ end
 gem 'rails', '3.0.7'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git' # Devise must be required before RailsAdmin
 gem "oa-oauth", :require => "omniauth/oauth"
-
+gem 'json_pure', '1.4.6', :require => 'json'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
