@@ -11,10 +11,6 @@
 	<% end %>
 </p>
 
-<% if @message.user == current_user %>
-	<%= link_to 'Edit', edit_message_path(@message) %> |
-<% end %>
-
 <br />
 
 <% tmp = "http://twhackernews.heroku.com/messages/" + @message.id.to_s %>
@@ -25,4 +21,6 @@
   <div id="fb-root"></div><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:comments href="<%= tmp %>" num_posts="10" width="450"></fb:comments>
 </p>
 
-<%= link_to 'Back', messages_path %>
+<% if @message.user == current_user %>
+	<%= link_to 'Edit', edit_message_path(@message) %> |
+<% end %><%= link_to 'Back', messages_path %>
