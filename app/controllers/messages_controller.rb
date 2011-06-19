@@ -2,13 +2,7 @@ class MessagesController < ApplicationController
   include ApplicationHelper
   #GET /messages
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      messages = @user.messages
-      @messages = message
-    else
-      @messages = Message.all
-    end
+    @messages = Message.all(:order => 'like_count DESC')
     
     respond_to do |format|
       format.html # index.html.erb
