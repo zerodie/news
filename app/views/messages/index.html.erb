@@ -5,6 +5,11 @@ FB.Event.subscribe('edge.create', function (response) {
 });
 </script>
 <table>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<table>
 <% @messages.each do |message| %>
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
   <tr>
