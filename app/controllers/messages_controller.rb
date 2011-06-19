@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
   #GET /messages/1.xml
   def show
     @message = Message.find(params[:id])
+	@page = @message.id.to_s
     respond_to do |format|
        format.html # show.html.erb
        format.xml  { render :xml => @message }

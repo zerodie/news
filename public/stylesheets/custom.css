@@ -24,7 +24,7 @@ section {
 }
 
 section h1 {
-  font-size: 200%;
+  font-size: 150%;
 }
 
 footer {
@@ -44,7 +44,7 @@ table {
   border: 0;
 }  
 td { 
-  border-bottom:1 solid #000000;
+  height: 8px;
 }
 
 /* Links */
