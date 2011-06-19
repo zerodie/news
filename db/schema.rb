@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110514100630) do
+ActiveRecord::Schema.define(:version => 20110619051937) do
 
   create_table "messages", :force => true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110514100630) do
     t.string   "title"
     t.string   "url"
     t.text     "content"
+    t.integer  "like_count"
   end
 
   create_table "users", :force => true do |t|
