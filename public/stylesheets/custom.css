@@ -19,7 +19,7 @@ header img {
 }
 
 section {
-  padding: 10px 20px 10px 20px;
+  padding: 20px 20px 10px 20px;
   background: #FFF;
 }
 
@@ -64,19 +64,6 @@ a:visited {
   color: #069;
 }
 
-header a {
-  color: #333333;
-  text-decoration: none;
-}
-
-header a:hover {
-  color: #4D4D4D;
-  text-decoration: underline;
-}
-
-header a:visited {
-  color: #4D4D4D;
-}
 
 /* Navigation */
 
