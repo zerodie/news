@@ -6,7 +6,12 @@ class Message < ActiveRecord::Base
   belongs_to :user
   validates_uniqueness_of :url, :scope => :content
   validates_presence_of :content, :unless => :has_url? #validate_presence_of :content if no url
+  after_initialize :init
 
+  def init
+    self.like_count  ||= 0.0           #will set the default value only if it's nil
+  end
+      
   def has_url?
     if self.url == ""
       false

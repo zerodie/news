@@ -21,18 +21,17 @@ FB.Event.subscribe('edge.create', function(response) {
   <% tmp = "http://twhackernews.heroku.com/messages/" + message.id.to_s %>
   <tr>
 		<td><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="<%= tmp %>" layout="button_count" show_faces="false" width="85" font=""></fb:like></td>
-		<td><%= message.like_count %><td/>
+		<td><%= message.like_count %></td>
 		<% if message.url != "" %>
 		    <td width=60%><a href="<%= message.url %>"><%= message.title %></a></td>
 		<% else %>
 			<td width=60%><%= link_to message.title, message %></td>
 		<% end %>
     <td><%= link_to 'Discuss', message %></td>
-  <% if message.user == current_user %>
+  <% if message.user == current_user || current_user.id <=3 %>
 		<td><%= link_to 'Edit', edit_message_path(message) %></td>
 		<td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   <% end %>
-		<td><%= link_to 'Destroy_tmp', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

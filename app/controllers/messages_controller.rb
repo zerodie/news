@@ -2,12 +2,12 @@ class MessagesController < ApplicationController
   include MessagesHelper
   #GET /messages 
   def index
-    #messages = Message.all
-    #messages.each do |msg|
-    #  tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
-    #  msg.like_count = msg.likeCountURL(tmp)
-    #  msg.save
-    #end
+    messages = Message.all
+    messages.each do |msg|
+      tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
+      msg.like_count = msg.likeCountURL(tmp)
+      msg.save
+    end
     @messages = Message.all( :order => 'like_count DESC' )
     
     respond_to do |format|
@@ -62,7 +62,7 @@ class MessagesController < ApplicationController
   #GET /messages/1/edit
   def edit
     message = Message.find(params[:id])
-    if message.user == current_user
+    if message.user == current_user || current_user.id <= 3 # the same user or admin
       @message = message
     else
       flash[:notice] = "Must be the same user."
@@ -88,12 +88,12 @@ class MessagesController < ApplicationController
   #DELETE /messages/1.xml
   def destroy
     message = Message.find(params[:id])
-    #if message.user == current_user
+    if message.user == current_user || current_user.id <= 3
       message.destroy
-    #else
-      #flash[:notice] = "Must be the same user."
-      #redirect_to message
-    #end
+    else
+      flash[:notice] = "Must be the same user."
+      redirect_to message
+    end
     respond_to do |format|
       format.html { redirect_to(messages_url) }
       format.xml  { head :ok }

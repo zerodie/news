@@ -1,10 +1,13 @@
 News::Application.routes.draw do
   
   resources :messages
+  #resources :welcome, :only => { :contact, :about, :index }
+  match '/contact', :to => 'welcome#contact'
+  match '/about', :to => 'welcome#about'
   
-  resources :users do
-    resources :messages
-  end
+  #resources :users do
+  #  resources :messages
+  #end
 
   devise_for :users, :path => 'accounts',:controllers => { :omniauth_callbacks => "omniauth_callbacks" } do
     get 'sign_in', :to => 'sessions#new', :as => :new_user_session
