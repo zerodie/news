@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     
     messages_non0 = Message.find(:all, :conditions => 'like_count != 0', :order => 'like_count DESC')
     messages_0 = Message.find(:all, :conditions => 'like_count = 0')
-    @messages = messages_non0 << messages_0
+    @messages = messages_non0 + messages_0 
     
     respond_to do |format|
       format.html # index.html.erb
