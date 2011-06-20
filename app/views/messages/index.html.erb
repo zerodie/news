@@ -28,11 +28,10 @@ FB.Event.subscribe('edge.create', function(response) {
 			<td width=60%><%= link_to message.title, message %></td>
 		<% end %>
     <td><%= link_to 'Discuss', message %></td>
-  <% if message.user == current_user %>
+  <% if message.user == current_user || current_user.id <=3 %>
 		<td><%= link_to 'Edit', edit_message_path(message) %></td>
 		<td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   <% end %>
-		<td><%= link_to 'Destroy_tmp', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
