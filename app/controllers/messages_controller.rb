@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
       @message = current_user.messages.new(params[:message])
       respond_to do |format|
         if @message.save
-          format.html { redirect_to(@message, :notice => 'Message was successfully created.') }
+          format.html { redirect_to(@message, :notice => 'News was successfully created.') }
           format.xml  { render :xml => @message, :status => :created, :location => @message }
         else
           format.html { render :action => "new" }
@@ -73,7 +73,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     respond_to do |format|
       if @message.update_attributes(params[:message])
-        format.html { redirect_to(@message, :notice => 'message was successfully updated.') }
+        format.html { redirect_to(@message, :notice => 'News was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -100,15 +100,15 @@ class MessagesController < ApplicationController
   
   #Get Message ID
   def getMessageID
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
+    #puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
   	if params[:message_id] =~ /\/([\d].*)/ 
-  	  puts $1
+  	  #puts $1
   	  mid = $1
   	  msg = Message.find(mid.to_i)
   	  tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
       msg.like_count = msg.likeCountURL(tmp)
       msg.save
-      puts "msg like_count =  " + msg.like_count.to_s
+      #puts "msg like_count =  " + msg.like_count.to_s
   	else 
   	  puts "no match"
   	end 
