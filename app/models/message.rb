@@ -27,7 +27,7 @@ class Message < ActiveRecord::Base
     result[0]["like_count"] 
   end
   
-  def get_like_count(nid)
+  def get_likecount(nid)
     url = "http://graph.facebook.com/?id=http://twhackernews.heroku.com/messages/" + nid.to_s
     uri = URI.parse(url)
     res = Net::HTTP.get_response uri
@@ -36,6 +36,7 @@ class Message < ActiveRecord::Base
     #   "id": "http://twhackernews.heroku.com/messages/20",
     #   "shares": 3
     #}
+    puts "!! " + data["shares"]
     data["shares"]
   end
 
