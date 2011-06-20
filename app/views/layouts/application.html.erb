@@ -15,17 +15,21 @@
 
 
 
-</head>
+</head>  
 <body>
   <div class="container">
     <header>
       <a href="http://twhackernews.heroku.com"><%= image_tag("TWHN.png", :alt => "TWHN") %></a>
       <script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="http://twhackernews.heroku.com/" send="false" layout="standard" width="450" show_faces="true" font=""></fb:like>
-      <nav>
-        <ul>
-          <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-        </ul>
-      </nav>
+      <% if user_signed_in? %>
+	    <% else %>
+	    <nav>
+          <ul>
+            <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+          </ul>
+	    </nav>
+	    <% end %>
+	  <% end %>
 	</header>
   
     <section>
