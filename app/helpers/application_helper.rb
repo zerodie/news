@@ -3,7 +3,7 @@ module ApplicationHelper
     if @num.nil?
 	  "TW Hacker News"
 	else
-	  "#{@num}"
+	  "#{@metat}"
 	end
   end
 end

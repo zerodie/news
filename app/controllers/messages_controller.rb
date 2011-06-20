@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
 	@num = @message.id.to_s
+	@metat = @message.title.to_s
     respond_to do |format|
        format.html # show.html.erb
        format.xml  { render :xml => @message }
