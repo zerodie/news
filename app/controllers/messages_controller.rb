@@ -103,11 +103,12 @@ class MessagesController < ApplicationController
     puts "!!!!!!!!!!!!!!!!!!!!!!!!!fuck"
   	if params[:message_id] =~ /\/([\d].*)/ 
   	  puts $1
-  	  #mid = $1
-  	  #tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
-      #msg.like_count = msg.likeCountURL(tmp)
-      #msg.save
-      #puts msg.like_count
+  	  mid = $1
+  	  msg = Message.find(mid.to_i)
+  	  tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
+      msg.like_count = msg.likeCountURL(tmp)
+      msg.save
+      puts "msg like_count =  " + msg.like_count.to_s
   	else 
   	  puts "no match"
   	end 
