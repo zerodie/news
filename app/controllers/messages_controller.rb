@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     messages.each do |msg|
       #tmp = "http://twhackernews.heroku.com/messages/" + msg.id.to_s
       #msg.like_count = msg.likeCountURL(tmp)
-      msg.like_cont = msg.get_like_count(msg.id)
+      msg.like_count = msg.get_like_count(msg.id)
       msg.save
     end
     @messages = Message.all( :order => 'like_count DESC' )
@@ -110,7 +110,7 @@ class MessagesController < ApplicationController
   	  msg = Message.find(mid.to_i)
   	  #tmp = "http://twhackernews.heroku.com/messages/" + mid.to_s
       #msg.like_count = msg.likeCountURL(tmp)
-      msg.like_cont = msg.get_like_count(mid.to_i)
+      msg.like_count = msg.get_like_count(mid.to_i)
       msg.save
       #puts "msg like_count =  " + msg.like_count.to_s
   	else 
