@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def title
+  def returntitle
     if @num.nil?
 	  "TW Hacker News"
 	else
