@@ -11,7 +11,7 @@ body {
 header {
   padding-top: 5px;
   padding-top: 10px;
-  padding-bottom: 8px;
+  padding-bottom: 15px;
 }
 
 header img {
@@ -19,7 +19,7 @@ header img {
 }
 
 section {
-  padding: 20px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   background: #FFF;
 }
 
