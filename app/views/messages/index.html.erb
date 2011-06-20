@@ -22,11 +22,11 @@ FB.Event.subscribe('edge.create', function(response) {
   <tr>
 		<td><script src="http://connect.facebook.net/zh_TW/all.js#xfbml=1"></script><fb:like href="<%= tmp %>" layout="button_count" show_faces="false" width="85" font=""></fb:like></td>
 		<% if message.url != "" %>
-		    <td width=70%><a href="<%= message.url %>"><%= message.title %></a></td>
+		    <td width=73%><a href="<%= message.url %>"><%= message.title %></a></td>
 		<% else %>
-			<td width=70%><%= link_to message.title, message %></td>
+			<td width=73%><%= link_to message.title, message %></td>
 		<% end %>
-    <td width=8%><%= link_to 'Discuss', message %></td>
+    <td width=9%><%= link_to 'Discuss', message %></td>
   <% if message.user == current_user || current_user.id <=3 %>
 		<td width=4%><%= link_to 'Edit', edit_message_path(message) %></td>
 		<td width=7%><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
