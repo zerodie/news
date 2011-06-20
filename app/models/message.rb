@@ -36,7 +36,7 @@ class Message < ActiveRecord::Base
     #   "id": "http://twhackernews.heroku.com/messages/20",
     #   "shares": 3
     #}
-    puts "!! " + data["shares"]
+    puts data["shares"]
     data["shares"]
   end
 
