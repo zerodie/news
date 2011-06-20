@@ -9,7 +9,7 @@ class Message < ActiveRecord::Base
   after_initialize :init
 
   def init
-    self.like_count  ||= 1000           #will set the default value only if it's nil
+    self.like_count  ||= 0           #will set the default value only if it's nil
   end
       
   def has_url?
