@@ -37,6 +37,7 @@ footer {
 
 footer nav {
   float: none;
+  background: #E3E3E3;
 }
 
 /* Table */
@@ -63,15 +64,28 @@ a:visited {
   color: #069;
 }
 
+header a {
+  color: #333333;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #4D4D4D;
+  text-decoration: underline;
+}
+
+header a:visited {
+  color: #4D4D4D;
+}
+
 /* Navigation */
 
 nav {
   float: right;
-}
-
-nav {
+  background: ;
   padding: 0 0.7em;
   white-space: nowrap;
+  color: #333333;
 }
 
 nav ul {
