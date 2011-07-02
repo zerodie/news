@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 group :development do
 	gem 'rspec-rails', '2.5.0'
-	gem 'annotate-models', '1.0.4'
 end
 
 group :test do
@@ -11,6 +10,7 @@ group :test do
 	gem 'spork', '0.9.0.rc5'
 end
 
+gem "will_paginate"
 gem 'rails', '3.0.7'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git' # Devise must be required before RailsAdmin
 gem "oa-oauth", :require => "omniauth/oauth"

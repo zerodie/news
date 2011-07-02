@@ -7,7 +7,8 @@ class Message < ActiveRecord::Base
   validates_uniqueness_of :url, :scope => :content
   validates_presence_of :content, :unless => :has_url? #validate_presence_of :content if no url
   after_initialize :init
-
+  scope :popular, :order => 'like_count DESC'
+  
   def init
     self.like_count  ||= 0           #will set the default value only if it's nil
   end

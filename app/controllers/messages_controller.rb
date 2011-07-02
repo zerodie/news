@@ -9,8 +9,8 @@ class MessagesController < ApplicationController
     #  msg.like_count = msg.get_likecount(msg.id)
     #  msg.save
     #end
-    @messages = Message.all( :order => 'like_count DESC' )
-    
+    @messages = Message.popular.paginate( :page => params[:page], :per_page => 5 )
+
     #messages_non0 = Message.find(:all, :conditions => 'like_count != 0', :order => 'like_count DESC')
     #messages_0 = Message.find(:all, :conditions => 'like_count = 0')
     #@messages = messages_non0 + messages_0 
